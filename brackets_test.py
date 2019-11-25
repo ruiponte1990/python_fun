@@ -30,13 +30,18 @@ def test_trailing():
 def test_multi_children():
     assert solution("[{}{}]") == True
     assert solution("[{}()]") == True
+    assert solution("[{}(]]") == False
+    assert solution("[{}{[]]") == False
     assert solution("[{}[()]{}]") == True
+    assert solution("[{}[()]{}{}[]()]") == True
 
 def test_single_level():
     assert solution("{}[]") == True
+    assert solution("{}[][]{}[]") == True
     assert solution("{}(]") == False
 
 def test_single_level_with_children():
     assert solution("{[]}[()]") == True
     assert solution("{[]}[()]{}") == True
     assert solution("{[]}[()]{}") == True
+    assert solution("{[]}{()]") == False
