@@ -1,4 +1,6 @@
 from brackets import solution
+#from brackets_canon import solution
+# uncomment or comment to switch between solutions
 
 def test_simple():
     assert solution("{}") == True
