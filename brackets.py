@@ -111,8 +111,4 @@ def solution(brackets):
     bracket_list = [char for char in brackets]
     tree = Bracket_Tree(bracket_list)
     return tree.isValid()
-
-print(solution("[{}{}]"))
-print(solution("[{}()]"))
-print(solution("[{}[()]{}]"))
-print(solution("[{}[()]{}{}[]()]"))
+    
