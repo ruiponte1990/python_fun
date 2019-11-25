@@ -1,6 +1,5 @@
 import sys
 
-
 class Bracket_Tree:
     def __init__(self, List):
         self.root = Bracket_Node(List)
