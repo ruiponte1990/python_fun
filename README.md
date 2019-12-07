@@ -1,13 +1,5 @@
-Solution to the balanced brackets problem in python
+# hamming
 
-brackets_canon.py is the canonical solution with a stack
+The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
 
-brackets.py is my version I tried to do for a coding challenge on hired.com and decided to fix later anyway
-
-To run the tests you need pytest.
-
-"pip install pytest"
-
-navigate to top level directory
-
-"pytest"
+Given two integers x and y, calculate the Hamming distance.
