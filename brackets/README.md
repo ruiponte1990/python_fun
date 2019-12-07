@@ -8,6 +8,6 @@ To run the tests you need pytest.
 
 "pip install pytest"
 
-navigate to top level directory
+then
 
 "pytest"
