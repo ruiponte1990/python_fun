@@ -1,22 +1,41 @@
 import sys
 import numpy as np
+import math
+
+def fullRotate(mat):
+    for _ in range(len(mat)-1):
+        mat = rotate(mat)
+    return mat
 
 def rotate(mat):
-    # will need to change this algorithm so it can be called on smaller and smaller matrices
-    # call it on outermost. then call it on next level in, then next level in
     l = len(mat)
+    tmp1 = mat[0][0]
     for i in range(1, l):
-        tmp = mat[i][0]
-        mat[i][0] = mat[i-1][0]
-    mat[l-1][0] = tmp
+        tmp2 = mat[i][0]
+        mat[i][0] = tmp1
+        tmp1 = tmp2
     for i in range(1, l):
-        tmp = mat[l-1][i]
-        mat[l-1][i] = mat[l-1][i-1]
-        
+        tmp2 = mat[l-1][i]
+        mat[l-1][i] = tmp1
+        tmp1 = tmp2
+    for i in range(l-2, -1, -1):
+        tmp2 = mat[i][l-1]
+        mat[i][l-1] = tmp1
+        tmp1 = tmp2
+    for i in range(l-2, -1, -1):
+        tmp2 = mat[0][i]
+        mat[0][i] = tmp1
+        tmp1 = tmp2
+    return mat
 
 def main(path):
     mat = np.loadtxt(path, dtype='i', delimiter=',')
-    return rotate(mat)
+    l = len(mat)
+    med = int(math.floor(len(mat)/2))
+    for i in range(0, med+1):
+        sub_mat = mat[i:(l-i)][i:(l-i)]
+        sub_mat = fullRotate(sub_mat)
+    return mat
 
 if __name__ == "__main__":
     print(main(sys.argv[1]))
