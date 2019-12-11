@@ -33,8 +33,11 @@ def main(path):
     l = len(mat)
     med = int(math.floor(len(mat)/2))
     for i in range(0, med+1):
-        sub_mat = mat[i:(l-i)][i:(l-i)]
-        sub_mat = fullRotate(sub_mat)
+        sub_mat = mat[i:(l-i)]
+        sub = []
+        for j in sub_mat:
+            sub.append(j[i:(l-i)])
+        sub_mat = fullRotate(sub)
     return mat
 
 if __name__ == "__main__":
