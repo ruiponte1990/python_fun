@@ -5,7 +5,6 @@ import math
 def main(path):
     mat = np.loadtxt(path, dtype='i', delimiter=',')
     rev = np.flip(mat, 1)
-    print(rev)
     trans = np.transpose(rev)
     return trans
     
