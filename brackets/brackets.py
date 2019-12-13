@@ -1,6 +1,7 @@
 import sys
 
 class Bracket_Tree:
+    pairs = {"{": "}", "(": ")", "[": "]"}
     def __init__(self, List):
         self.root = root_node(List)
     def isValid(self):
@@ -33,42 +34,12 @@ class Bracket_Node:
     def add(self, List):
         if len(List) > 0:
             one = List.pop(0)
-            if one == "(":
+            if one in Bracket_Tree.pairs:
                 if not self.open: 
                     self.open = one
                     if (len(List) > 0):
                         two = List.pop(0)
-                        if two == ")":
-                            self.close = two
-                            if self.parent and (len(List) > 0):
-                                self.parent.add(List)
-                        else:
-                            new_node = Bracket_Node([two] + List, self)
-                            self.children.append(new_node)
-                else:
-                    new_node = Bracket_Node([one] + List, self)
-                    self.children.append(new_node)
-            elif one == "{": 
-                if not self.open: 
-                    self.open = one
-                    if (len(List) > 0):
-                        two = List.pop(0)
-                        if two == "}":
-                            self.close = two
-                            if self.parent and (len(List) > 0):
-                                self.parent.add(List) 
-                        else:
-                            new_node = Bracket_Node([two] + List, self)
-                            self.children.append(new_node)
-                else:
-                    new_node = Bracket_Node([one] + List, self)
-                    self.children.append(new_node)
-            elif one == "[":
-                if not self.open: 
-                    self.open = one
-                    if (len(List) > 0):
-                        two = List.pop(0)
-                        if two == "]":
+                        if two == Bracket_Tree.pairs[one]:
                             self.close = two
                             if self.parent and (len(List) > 0):
                                 self.parent.add(List)
@@ -85,20 +56,10 @@ class Bracket_Node:
 
     def isValid(self):
         if self.open and self.close:
-            if self.open == "(" and self.close == ")": 
+            if self.close == Bracket_Tree.pairs[self.open]:
                 for child in self.children:
                     if not child.isValid():
                         return False
-                return True
-            elif self.open == "[" and self.close == "]": 
-                for child in self.children:
-                    if not child.isValid():
-                        return False
-                return True
-            elif self.open == "{" and self.close == "}":
-                for child in self.children:
-                        if not child.isValid():
-                            return False
                 return True
             else:
                 return False
@@ -112,3 +73,4 @@ def solution(brackets):
     tree = Bracket_Tree(bracket_list)
     return tree.isValid()
     
+print(solution("{}"))
