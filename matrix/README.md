@@ -22,6 +22,6 @@ Output:
  2  6 10 14  
  1  5  9 13  
 
- My fun way of just cycling along the outside and recursing in: matrix.py (works how you think it should look)  
+My fun way of just cycling along the outside and recursing in: matrix.py (works how you think it should look)  
 
 Canonical way where you reverse order of rows and take transpose: matrix_canon.py
