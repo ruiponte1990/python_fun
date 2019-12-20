@@ -39,7 +39,7 @@ The function checks how far along in the sequence we are by comparing the input 
 
 #### performance with timeit: 0.575966119766 seconds
 
-# fib_gen.py  
+### fib_gen.py  
 
 I also thought it might be cool to try this problem using a generator since I knew that was a method to avoid storing values in memory. However since generators essentially allow you to convert a function into an iterator it ends up basically working the same as the first solution. It is a little faster though!
 
