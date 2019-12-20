@@ -15,6 +15,7 @@ The second way to solve this problem is recursively. Since the next iteration in
 ##### Sn = Sn-1 + Sn-2  
 
 You can just call the function multiple times until you get to the smallest two numbers which will be 1 and 2. This solution is impractical however. As n grows large the function calls and variables will need too much memory and might cause a stack overflow.  Also it is inefficient since you are solving the same problem repeatedly instead of only once.  
+
 For example when you solve for:  
 
 ##### fib(4) = fib(3) + fib(2)
