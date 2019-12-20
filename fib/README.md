@@ -37,7 +37,7 @@ elif n <= len(fibArr):
     return fibArr[n-1]
 ```
 
-The function checks how far along in the sequence we are by comparing the input of the function to the length of the stored array. If it is less than the array length then it knows it can just return the stored value without calling it itself again.  
+The function checks how far along in the sequence we are by comparing the input of the function to the length of the stored array. If it is less than the array length then it knows it can just return the stored value without calling itself again.  
 
 #### performance with timeit: 0.575966119766 seconds
 
