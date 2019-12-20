@@ -1,4 +1,6 @@
-def main(n):
+import timeit
+
+def fib(n):
     first = 0
     second = 1
     i = 2
@@ -12,7 +14,4 @@ def main(n):
             second = next_
             i += 1
 
-if __name__ == "__main__":
-    print(list(main(5))[-1])
-    print(list(main(3))[-1])
-    print(list(main(10))[-1])
+print(timeit.Timer('fib(5);fib(3);fib(10);fib(100)', 'from __main__ import fib').timeit())
