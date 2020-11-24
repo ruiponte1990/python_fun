@@ -6,7 +6,7 @@ def findTarget(acc, a, i, j, target, path):
         if j < len(a[i]):
             val = a[i][j] * acc
             if val > target:
-                false_paths.append(path)
+                return False
             elif val == target and i == (len(a) - 1):
                 return path
             else:
