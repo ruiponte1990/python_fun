@@ -28,7 +28,7 @@ class CSVIterator():
                     "first name": split[0],
                     "last name": split[1],
                     "email": row[1]
-                    }
+                }
                 return row_, next_val
             else:
                 return line, 0
