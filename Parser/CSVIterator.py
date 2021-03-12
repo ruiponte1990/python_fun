@@ -1,5 +1,4 @@
 import sys
-import csv
 import json
 
 class CSVIterator():
